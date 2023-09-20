@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Navbar from '../components/navbar'
 import { Heading, Flex } from '@chakra-ui/react'
 
 export default function Home() {
@@ -11,8 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <Navbar />
         <Flex height="100vh" alignItems="center" justifyContent="center">
-          <Heading>Install Chakra UI In NextJS 13</Heading>
+          <Heading>Install Chakra UI Issn NextJS 13</Heading>
         </Flex>
       </main>
     </>
