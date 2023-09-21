@@ -1,19 +1,20 @@
 import { Grid, Container, Center, Box, Menu, MenuList, MenuItem, MenuButton, Link, Heading, GridItem } from '@chakra-ui/react'
 import { IconMenu2 } from '@tabler/icons-react'
+import NextLink from 'next/link'
 
-const MyMenuList = ({ type }) => {
+const MyMenuList = ({ type, path }) => {
   const menuItems = [
     {
       name: 'O mnie',
-      href: 'omnie',
+      href: '/',
     },
     {
       name: 'Projekty',
-      href: 'projekty',
+      href: '/projects',
     },
     {
       name: 'Kontakt',
-      href: 'kontakt',
+      href: '/contact',
     },
   ]
 
@@ -23,11 +24,14 @@ const MyMenuList = ({ type }) => {
     default: 'a',
   }
   const Tag = typeTag[type] || typeTag.default
-  return menuItems.map((item) => (
-    <Tag p={2} key={item.href} href={item.href}>
-      {item.name}
-    </Tag>
-  ))
+  return menuItems.map((item) => {
+    const active = path === item.href
+    return (
+      <Tag p={2} key={item.href} href={item.href} as={NextLink} bg={active ? 'red' : undefined} color={active ? '#202023' : 'red'}>
+        {item.name}
+      </Tag>
+    )
+  })
 }
 
 const BurgerMenu = () => (
@@ -41,19 +45,25 @@ const BurgerMenu = () => (
   </Menu>
 )
 
-const Navbar = () => (
+const Navbar = ({ path }) => (
   <Box position="fixed" as="nav" w="100%">
     <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="center">
       <Grid p={2} templateColumns="repeat(5, 1fr)" gap={4}>
         <GridItem p={2} mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'initial'}>
-            mruszkiewicz.dev
-          </Heading>
+          <Link
+            href="/"
+            as={NextLink}
+            style={{
+              textDecoration: 'none',
+            }}
+          >
+            <Heading as="h1" size="lg" letterSpacing="0.15em" dangerouslySetInnerHTML={{ __html: '{mruszkiewicz.dev}' }} />
+          </Link>
         </GridItem>
         <GridItem colSpan={3} p={0}>
           <Box display={{ base: 'none', md: 'flex' }} h="100%">
             <Center w="400px">
-              <MyMenuList type="deskop" />
+              <MyMenuList type="deskop" path={path} />
             </Center>
           </Box>
         </GridItem>
