@@ -73,7 +73,7 @@ const Navbar = ({ path }) => {
   return (
     <Box position="fixed" as="nav" w="100%">
       <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="center">
-        <Grid p={2} templateColumns="repeat(5, 0.5fr)" gap={2}>
+        <Grid p={2} templateColumns="repeat(5, 0.5fr)" gap={1}>
           <GridItem pt={1}>
             <Link
               href="/"
@@ -83,7 +83,7 @@ const Navbar = ({ path }) => {
               }}
             >
               <Heading
-                bgGradient={useColorModeValue('linear(to-l,#769431, #01857c)', 'linear(to-l, #03b5aa, #dbfe87)')}
+                bgGradient={useColorModeValue('linear(to-l,red.500, yellow.500)', 'linear(to-l, #03b5aa, #dbfe87)')}
                 bgClip="text"
                 p={{ base: 'none', md: '2' }}
                 as="h1"
@@ -100,7 +100,7 @@ const Navbar = ({ path }) => {
               </Center>
             </Box>
           </GridItem>
-          <GridItem pt={1}>
+          <GridItem>
             <Button
               _hover={{ color: useColorModeValue('sunset.900', 'moonstone.100') }}
               color={useColorModeValue('sunset.100', 'moonstone.900')}
@@ -111,7 +111,14 @@ const Navbar = ({ path }) => {
             </Button>
           </GridItem>
           <GridItem>
-            <Box m={1} display={{ base: 'flex', md: 'none' }}>
+            <Box
+              rounded="md"
+              p={2}
+              display={{ base: 'flex', md: 'none' }}
+              _hover={{ color: useColorModeValue('sunset.900', 'moonstone.100') }}
+              color={useColorModeValue('sunset.100', 'moonstone.900')}
+              bg={useColorModeValue('sunset.500', 'moonstone.500')}
+            >
               <BurgerMenu />
             </Box>
           </GridItem>
