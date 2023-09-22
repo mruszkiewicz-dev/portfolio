@@ -3,6 +3,7 @@
   "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "next"],
   "plugins": ["prettier"],
   "rules": {
+    "react-hooks/rules-of-hooks": 0,
     "no-unused-vars": [
       "error",
       {

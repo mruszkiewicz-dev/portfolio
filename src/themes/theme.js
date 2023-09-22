@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools'
 import '@fontsource/varela-round'
 
 const config = {
@@ -6,65 +7,87 @@ const config = {
   useSystemColorMode: false,
 }
 
+const styles = {
+  global: (props) => ({
+    body: {
+      bg: mode('#fef6ec', '#06101c')(props),
+    },
+  }),
+}
+
+const colors = {
+  atomic_tangerine: {
+    DEFAULT: '#f79256',
+    100: '#3f1903',
+    200: '#7f3206',
+    300: '#be4b09',
+    400: '#f46715',
+    500: '#f79256',
+    600: '#f9a677',
+    700: '#fabc99',
+    800: '#fcd3bb',
+    900: '#fde9dd',
+  },
+  sunset: {
+    DEFAULT: '#fbd1a2',
+    100: '#4f2c03',
+    200: '#9f5807',
+    300: '#ee840a',
+    400: '#f8ab53',
+    500: '#fbd1a2',
+    600: '#fcdbb5',
+    700: '#fde4c7',
+    800: '#fdedda',
+    900: '#fef6ec',
+  },
+  tiffany_blue: {
+    DEFAULT: '#7dcfb6',
+    100: '#123027',
+    200: '#24614e',
+    300: '#369176',
+    400: '#4cbd9b',
+    500: '#7dcfb6',
+    600: '#97d8c5',
+    700: '#b1e2d3',
+    800: '#cbece2',
+    900: '#e5f5f0',
+  },
+  moonstone: {
+    DEFAULT: '#00b2ca',
+    100: '#002429',
+    200: '#004852',
+    300: '#006c7a',
+    400: '#0090a3',
+    500: '#00b2ca',
+    600: '#0ae2ff',
+    700: '#47eaff',
+    800: '#85f1ff',
+    900: '#c2f8ff',
+  },
+  yinmn_blue: {
+    DEFAULT: '#1d4e89',
+    100: '#06101c',
+    200: '#0c1f38',
+    300: '#122f53',
+    400: '#183f6f',
+    500: '#1d4e89',
+    600: '#296fc3',
+    700: '#5692db',
+    800: '#8eb6e7',
+    900: '#c7dbf3',
+  },
+}
+
+const fonts = {
+  body: `'Varela Round', 'sans-serif'`,
+  heading: `'Varela Round', 'sans-serif'`,
+}
+
 const theme = extendTheme({
+  styles,
   config,
-  colors: {
-    black: '#070a0c',
-
-    gunmetal: {
-      DEFAULT: '',
-      100: '#070a0c',
-      200: '#0d1417',
-      300: '#141e23',
-      400: '#1b282f',
-      500: '#22333b',
-      600: '#40606f',
-      700: '#608ea3',
-      800: '#95b4c2',
-      900: '#cad9e0',
-    },
-    almond: {
-      DEFAULT: '#eae0d5',
-      100: '#3c2d1e',
-      200: '#775b3c',
-      300: '#ae885f',
-      400: '#ccb49b',
-      500: '#eae0d5',
-      600: '#efe7de',
-      700: '#f3ede7',
-      800: '#f7f3ef',
-      900: '#fbf9f7',
-    },
-    khaki: {
-      DEFAULT: '#c6ac8f',
-      100: '#2d2317',
-      200: '#5b462e',
-      300: '#886945',
-      400: '#b08b62',
-      500: '#c6ac8f',
-      600: '#d2bda5',
-      700: '#ddcebc',
-      800: '#e8ded2',
-      900: '#f4efe9',
-    },
-    walnut_brown: {
-      DEFAULT: '#5e503f',
-      100: '#13100d',
-      200: '#262019',
-      300: '#393026',
-      400: '#4c4133',
-      500: '#5e503f',
-      600: '#89755b',
-      700: '#ab9880',
-      800: '#c7baab',
-      900: '#e3ddd5',
-    },
-  },
-
-  fonts: {
-    body: `'Varela Round', 'sans-serif'`,
-    heading: `'Varela Round', 'sans-serif'`,
-  },
+  colors,
+  fonts,
 })
 
 export default theme

@@ -4,7 +4,6 @@ import { Chakra } from '../chakra'
 function MyApp({ Component, pageProps, router }) {
   return (
     <Chakra cookies={pageProps.cookies}>
-      <Component {...pageProps} />
       <Main router={router}>
         <Component {...pageProps} />
       </Main>

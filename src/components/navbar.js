@@ -1,5 +1,20 @@
-import { Grid, Container, Center, Box, Menu, MenuList, MenuItem, MenuButton, Link, Heading, GridItem } from '@chakra-ui/react'
-import { IconMenu2 } from '@tabler/icons-react'
+import {
+  Grid,
+  Button,
+  Container,
+  Center,
+  Box,
+  Menu,
+  MenuList,
+  MenuItem,
+  MenuButton,
+  Link,
+  Heading,
+  GridItem,
+  useColorMode,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import { IconMenu2, IconMoon, IconSun } from '@tabler/icons-react'
 import NextLink from 'next/link'
 
 const MyMenuList = ({ type, path }) => {
@@ -27,7 +42,15 @@ const MyMenuList = ({ type, path }) => {
   return menuItems.map((item) => {
     const active = path === item.href
     return (
-      <Tag p={2} key={item.href} href={item.href} as={NextLink} bg={active ? 'red' : undefined} color={active ? '#202023' : 'red'}>
+      <Tag
+        p={2}
+        key={item.href}
+        href={item.href}
+        as={NextLink}
+        rounded="md"
+        bg={active && useColorModeValue('sunset.500', 'moonstone.500')}
+        color={active ? useColorModeValue('sunset.100', 'moonstone.900') : useColorModeValue('sunset.100', 'moonstone.900')}
+      >
         {item.name}
       </Tag>
     )
@@ -45,36 +68,57 @@ const BurgerMenu = () => (
   </Menu>
 )
 
-const Navbar = ({ path }) => (
-  <Box position="fixed" as="nav" w="100%">
-    <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="center">
-      <Grid p={2} templateColumns="repeat(5, 1fr)" gap={4}>
-        <GridItem p={2} mr={5}>
-          <Link
-            href="/"
-            as={NextLink}
-            style={{
-              textDecoration: 'none',
-            }}
-          >
-            <Heading as="h1" size="lg" letterSpacing="0.15em" dangerouslySetInnerHTML={{ __html: '{mruszkiewicz.dev}' }} />
-          </Link>
-        </GridItem>
-        <GridItem colSpan={3} p={0}>
-          <Box display={{ base: 'none', md: 'flex' }} h="100%">
-            <Center w="400px">
-              <MyMenuList type="deskop" path={path} />
-            </Center>
-          </Box>
-        </GridItem>
-        <GridItem>
-          <Box m={1} display={{ base: 'inline-block', md: 'none' }}>
-            <BurgerMenu />
-          </Box>
-        </GridItem>
-      </Grid>
-    </Container>
-  </Box>
-)
+const Navbar = ({ path }) => {
+  const { colorMode, toggleColorMode } = useColorMode()
+  return (
+    <Box position="fixed" as="nav" w="100%">
+      <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="center">
+        <Grid p={2} templateColumns="repeat(5, 0.5fr)" gap={2}>
+          <GridItem pt={1}>
+            <Link
+              href="/"
+              as={NextLink}
+              style={{
+                textDecoration: 'none',
+              }}
+            >
+              <Heading
+                bgGradient={useColorModeValue('linear(to-l,#769431, #01857c)', 'linear(to-l, #03b5aa, #dbfe87)')}
+                bgClip="text"
+                p={{ base: 'none', md: '2' }}
+                as="h1"
+                size="md"
+                letterSpacing="0.15em"
+                dangerouslySetInnerHTML={{ __html: '{mruszkiewicz.dev}' }}
+              />
+            </Link>
+          </GridItem>
+          <GridItem colSpan={{ base: '0', md: '3' }} p={1}>
+            <Box display={{ base: 'none', md: 'flex' }}>
+              <Center w="400px">
+                <MyMenuList type="deskop" path={path} />
+              </Center>
+            </Box>
+          </GridItem>
+          <GridItem pt={1}>
+            <Button
+              _hover={{ color: useColorModeValue('sunset.900', 'moonstone.100') }}
+              color={useColorModeValue('sunset.100', 'moonstone.900')}
+              bg={useColorModeValue('sunset.500', 'moonstone.500')}
+              onClick={toggleColorMode}
+            >
+              {colorMode === 'light' ? <IconMoon /> : <IconSun />}
+            </Button>
+          </GridItem>
+          <GridItem>
+            <Box m={1} display={{ base: 'flex', md: 'none' }}>
+              <BurgerMenu />
+            </Box>
+          </GridItem>
+        </Grid>
+      </Container>
+    </Box>
+  )
+}
 
 export default Navbar
