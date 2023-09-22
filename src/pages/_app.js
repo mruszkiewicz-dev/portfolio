@@ -1,14 +1,14 @@
-import { ChakraProvider } from '@chakra-ui/react'
 import Main from '../components/layouts/main'
-import theme from '../themes/theme'
+import { Chakra } from '../chakra'
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <ChakraProvider theme={theme}>
+    <Chakra cookies={pageProps.cookies}>
+      <Component {...pageProps} />
       <Main router={router}>
         <Component {...pageProps} />
       </Main>
-    </ChakraProvider>
+    </Chakra>
   )
 }
 
