@@ -1,8 +1,11 @@
 import { Highlight, Box, Image, useColorModeValue, Center } from '@chakra-ui/react'
 import Technology from '@/components/technology'
+import Sea from '../components/landspace/sea'
+
 export default function Home() {
   return (
     <Box mt={10} align="center">
+      <Sea />
       <Box p={2} display={{ base: 'div', md: 'flex' }}>
         <Box flex="1">
           <Highlight
@@ -19,7 +22,7 @@ export default function Home() {
             perkusji - rytm to moje drugie imię.
           </Highlight>
         </Box>
-        <Center w="120px" m={2}>
+        <Center w="120px" ml={2}>
           <Image
             src="./foto.jpg"
             border="solid"
@@ -30,7 +33,9 @@ export default function Home() {
           />
         </Center>
       </Box>
-      <Technology />
+      <Box mt={5}>
+        <Technology />
+      </Box>
     </Box>
   )
 }

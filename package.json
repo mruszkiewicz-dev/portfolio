@@ -17,13 +17,19 @@
     "@fontsource-variable/caveat": "^5.0.8",
     "@fontsource/varela-round": "^5.0.8",
     "@next/font": "^13.5.2",
+    "@react-spring/three": "^9.7.3",
+    "@react-three/drei": "^9.84.3",
     "@react-three/fiber": "^8.14.3",
     "@tabler/icons-react": "^2.34.0",
     "framer-motion": "^10.16.4",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "three": "^0.156.1"
+    "react-spring": "^9.7.2",
+    "react-three-fiber": "^6.0.13",
+    "react-three-gui": "^0.4.2",
+    "three": "^0.156.1",
+    "three-stdlib": "^2.26.6"
   },
   "eslintConfig": {
     "extends": [
