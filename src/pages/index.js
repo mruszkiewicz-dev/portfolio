@@ -5,7 +5,10 @@ import Sea from '../components/landspace/sea'
 export default function Home() {
   return (
     <Box mt={10} align="center">
-      <Sea />
+      <Box m={10}>
+        <Sea />
+      </Box>
+
       <Box p={2} display={{ base: 'div', md: 'flex' }}>
         <Box flex="1">
           <Highlight
