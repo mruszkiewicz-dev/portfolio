@@ -1,6 +1,7 @@
 import { Highlight, Box, Image, useColorModeValue, Center } from '@chakra-ui/react'
 import Technology from '@/components/technology'
 import Sea from '../components/landspace/sea'
+import Palled from '../components/Palled'
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
       <Box m={10}>
         <Sea />
       </Box>
-
+      <Palled />
       <Box p={2} display={{ base: 'div', md: 'flex' }}>
         <Box flex="1">
           <Highlight
