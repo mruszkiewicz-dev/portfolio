@@ -1,4 +1,4 @@
-import { Image, Flex, keyframes } from '@chakra-ui/react'
+import { Image, Flex, keyframes, Text } from '@chakra-ui/react'
 
 const animationRoute = keyframes`
 0% {
@@ -41,10 +41,19 @@ const Technology = () => {
   ]
 
   return (
-    <Flex wrap="wrap" justify="center">
-      {data.map((item) => (
-        <Image p={2} key={item.name} src={`./tech/${item.name}.png`} borderRadius="full" boxSize="60px" _hover={{ animation: animation }} />
-      ))}
+    <Flex direction="column" align="center" mt={10}>
+      <Text as="b" fontSize="xl">
+        Tech Stack
+      </Text>
+      <Text as="em" fontSize="sm">
+        Technologie które używałem
+      </Text>
+      <Flex wrap="wrap" justify="center" m={10}>
+        {data.map((item) => (
+          // eslint-disable-next-line jsx-a11y/alt-text
+          <Image p={2} key={item.name} src={`./tech/${item.name}.png`} borderRadius="full" boxSize="60px" _hover={{ animation: animation }} />
+        ))}
+      </Flex>
     </Flex>
   )
 }

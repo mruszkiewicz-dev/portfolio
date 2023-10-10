@@ -1,30 +1,31 @@
-import { Highlight, Box, Image, useColorModeValue, Center } from '@chakra-ui/react'
+/* eslint-disable jsx-a11y/alt-text */
+import { Highlight, Box, Image, useColorModeValue, Center, Text } from '@chakra-ui/react'
 import Technology from '@/components/technology'
 import Sea from '../components/landspace/sea'
-import Palled from '../components/Palled'
 
 export default function Home() {
   return (
-    <Box mt={10} align="center">
-      <Box m={10}>
+    <Box mt={40}>
+      <Box mb={20}>
         <Sea />
       </Box>
-      <Palled />
       <Box p={2} display={{ base: 'div', md: 'flex' }}>
         <Box flex="1">
-          <Highlight
-            query="Cześć, jestem Michał"
-            styles={{
-              px: '2',
-              py: '1',
-              rounded: 'full',
-              fontSize: '16px',
-              bgGradient: useColorModeValue('linear(to-l,red.500, yellow.500)', 'linear(to-l, #03b5aa, #dbfe87)'),
-            }}
-          >
-            Cześć, jestem Michał, początkujący frontendowiec, pasjonat kodowania. Kiedy nie jestem zakopany w kodzie, po prostu odprężam się na
-            perkusji - rytm to moje drugie imię.
-          </Highlight>
+          <Text fontSize="2xl">Cześć 👋,</Text>
+          <Text fontSize="2xl">
+            <Highlight
+              query="jestem Michał"
+              styles={{
+                px: '2',
+                py: '1',
+                rounded: 'full',
+                bgGradient: useColorModeValue('linear(to-l,red.500, yellow.500)', 'linear(to-l, #03b5aa, #dbfe87)'),
+              }}
+            >
+              jestem Michał
+            </Highlight>
+          </Text>
+          <Text fontSize="2xl">początakujący frontendowiec</Text>
         </Box>
         <Center w="120px" ml={2}>
           <Image

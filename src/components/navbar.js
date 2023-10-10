@@ -71,7 +71,7 @@ const BurgerMenu = () => (
 const Navbar = ({ path }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <Box position="fixed" as="nav" w="100%">
+    <Box position="fixed" as="nav" w="100%" overflow="hidden" zIndex="99999" backdropFilter="auto" backdropBlur="6px">
       <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="center">
         <Grid p={2} templateColumns="repeat(5, 0.5fr)" gap={1}>
           <GridItem pt={1}>
