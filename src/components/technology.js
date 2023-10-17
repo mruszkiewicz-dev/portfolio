@@ -51,7 +51,7 @@ const Technology = () => {
       <Flex wrap="wrap" justify="center" m={10}>
         {data.map((item) => (
           // eslint-disable-next-line jsx-a11y/alt-text
-          <Image p={2} key={item.name} src={`./tech/${item.name}.png`} borderRadius="full" boxSize="60px" _hover={{ animation: animation }} />
+          <Image p={2} key={item.name} src={`./tech/${item.name}.png`} borderRadius="full" boxSize="50px" _hover={{ animation: animation }} />
         ))}
       </Flex>
     </Flex>

@@ -9,30 +9,16 @@ import {
   MenuItem,
   MenuButton,
   Link,
-  Heading,
   GridItem,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { IconMenu2, IconMoon, IconSun } from '@tabler/icons-react'
 import NextLink from 'next/link'
+import Logo from '../components/logo'
+import menuItems from '../data/data'
 
 const MyMenuList = ({ type, path }) => {
-  const menuItems = [
-    {
-      name: 'O mnie',
-      href: '/',
-    },
-    {
-      name: 'Projekty',
-      href: '/projects',
-    },
-    {
-      name: 'Kontakt',
-      href: '/contact',
-    },
-  ]
-
   const typeTag = {
     mobile: MenuItem,
     deskop: Link,
@@ -71,27 +57,20 @@ const BurgerMenu = () => (
 const Navbar = ({ path }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <Box position="fixed" as="nav" w="100%" overflow="hidden" zIndex="99999" backdropFilter="auto" backdropBlur="6px">
+    <Box
+      position="fixed"
+      bgColor={useColorModeValue('sunset.800', 'yinmn_blue.200')}
+      as="nav"
+      w="100%"
+      overflow="hidden"
+      zIndex="99999"
+      backdropFilter="auto"
+      backdropBlur="6px"
+    >
       <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="center">
         <Grid p={2} templateColumns="repeat(5, 0.5fr)" gap={1}>
           <GridItem pt={1}>
-            <Link
-              href="/"
-              as={NextLink}
-              style={{
-                textDecoration: 'none',
-              }}
-            >
-              <Heading
-                bgGradient={useColorModeValue('linear(to-l,red.500, yellow.500)', 'linear(to-l, #03b5aa, #dbfe87)')}
-                bgClip="text"
-                p={{ base: 'none', md: '2' }}
-                as="h1"
-                size="md"
-                letterSpacing="0.15em"
-                dangerouslySetInnerHTML={{ __html: '{mruszkiewicz.dev}' }}
-              />
-            </Link>
+            <Logo size="md" />
           </GridItem>
           <GridItem colSpan={{ base: '0', md: '3' }} p={1}>
             <Box display={{ base: 'none', md: 'flex' }}>
