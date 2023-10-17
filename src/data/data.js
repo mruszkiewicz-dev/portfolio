@@ -1,4 +1,4 @@
-const menuItems = [
+export const menuItems = [
   {
     name: 'O mnie',
     href: '/',
@@ -13,4 +13,25 @@ const menuItems = [
   },
 ]
 
-export default menuItems
+export const bioItems = [
+  {
+    year: '1995',
+    description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
+  },
+  {
+    year: '1995',
+    description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
+  },
+  {
+    year: '1995',
+    description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
+  },
+  {
+    year: '1995',
+    description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
+  },
+  {
+    year: '1995',
+    description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
+  },
+]

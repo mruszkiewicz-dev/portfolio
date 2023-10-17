@@ -1,16 +1,18 @@
-import { Text, TableContainer, Table, Thead, Tr, Th, Td, Tbody } from '@chakra-ui/react'
+import { Text, TableContainer, Table, Tr, Td, Tbody } from '@chakra-ui/react'
+import bioItems from './../data/data'
 
 const Bio = () => (
   <TableContainer>
     <Table>
       <Text fontSize="lg">Bio</Text>
-      <Thead>
-        <Tr>
-          <Th>Rok</Th>
-          <Th>into</Th>
-        </Tr>
-      </Thead>
       <Tbody>
+        {bioItems.map((item) => (
+          <Tr key={item.year}>
+            <Td>inches</Td>
+            <Td>millimetres (mm)</Td>
+          </Tr>
+        ))}
+
         <Tr>
           <Td>inches</Td>
           <Td>millimetres (mm)</Td>
