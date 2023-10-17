@@ -1,19 +1,21 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Highlight, Box, Image, useColorModeValue, Center, Text } from '@chakra-ui/react'
+import { Highlight, Box, Flex, Image, useColorModeValue, Center, Text } from '@chakra-ui/react'
 import Technology from '@/components/technology'
 import Sea from '../components/landspace/sea'
-import Bio from '../components/bio'
-
+/* import Bio from '../components/bio'
+ */
 export default function Home() {
   return (
     <Box mt={40}>
       <Box mb={20}>
         <Sea />
       </Box>
-      <Box p={2} display={{ base: 'div', md: 'flex' }}>
-        <Box flex="1">
-          <Text fontSize="2xl">Cześć 👋,</Text>
-          <Text fontSize="2xl">
+      <Flex p={2} direction={{ base: 'column', md: 'row' }} align={{ base: 'center' }}>
+        <Box flex="1" justify={{ base: 'space-between', md: 'center' }} alignContent={{ base: 'center' }}>
+          <Text align={{ base: 'center', md: 'left' }} fontSize="2xl">
+            Cześć 👋,
+          </Text>
+          <Text align={{ base: 'center', md: 'left' }} fontSize="2xl">
             <Highlight
               query="jestem Michał"
               styles={{
@@ -26,9 +28,11 @@ export default function Home() {
               jestem Michał
             </Highlight>
           </Text>
-          <Text fontSize="2xl">początakujący frontendowiec</Text>
+          <Text align={{ base: 'center', md: 'left' }} fontSize="2xl">
+            początakujący frontendowiec
+          </Text>
         </Box>
-        <Center w="120px" ml={2}>
+        <Center w="120px" mt={4}>
           <Image
             src="./foto.jpg"
             border="solid"
@@ -38,13 +42,11 @@ export default function Home() {
             borderRadius="full"
           />
         </Center>
-      </Box>
+      </Flex>
       <Box mt={5}>
         <Technology />
       </Box>
-      <Box mt={5}>
-        <Bio />
-      </Box>
+      <Box mt={5}>{/* <Bio /> */}</Box>
     </Box>
   )
 }

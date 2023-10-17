@@ -16,7 +16,7 @@ import {
 import { IconMenu2, IconMoon, IconSun } from '@tabler/icons-react'
 import NextLink from 'next/link'
 import Logo from '../components/logo'
-import menuItems from '../data/data'
+import { menuItems } from '../data/data'
 
 const MyMenuList = ({ type, path }) => {
   const typeTag = {

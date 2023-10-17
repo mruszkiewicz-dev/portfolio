@@ -19,19 +19,19 @@ export const bioItems = [
     description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
   },
   {
-    year: '1995',
+    year: '1996',
     description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
   },
   {
-    year: '1995',
+    year: '1997',
     description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
   },
   {
-    year: '1995',
+    year: '1998',
     description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
   },
   {
-    year: '1995',
+    year: '1999',
     description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
   },
 ]

@@ -1,5 +1,5 @@
 import { Text, TableContainer, Table, Tr, Td, Tbody } from '@chakra-ui/react'
-import bioItems from './../data/data'
+import { bioItems } from './../data/data'
 
 const Bio = () => (
   <TableContainer>
