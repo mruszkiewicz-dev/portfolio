@@ -35,3 +35,46 @@ export const bioItems = [
     description: 'aaaaa asd asd asd asd asd asd asd asd asd asd',
   },
 ]
+
+export const projcetItems = [
+  {
+    name: 'name1',
+    description: 'description',
+    image: './vercel.svg',
+  },
+  {
+    name: 'name2',
+    description: 'description',
+    image: './vercel.svg',
+  },
+  {
+    name: 'name3',
+    description: 'description',
+    image: './vercel.svg',
+  },
+  {
+    name: 'name4',
+    description: 'description',
+    image: './vercel.svg',
+  },
+  {
+    name: 'name5',
+    description: 'description',
+    image: './vercel.svg',
+  },
+  {
+    name: 'name6',
+    description: 'description',
+    image: './vercel.svg',
+  },
+  {
+    name: 'name7',
+    description: 'description',
+    image: './vercel.svg',
+  },
+  {
+    name: 'name8',
+    description: 'description',
+    image: './vercel.svg',
+  },
+]

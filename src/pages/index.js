@@ -2,11 +2,11 @@
 import { Highlight, Box, Flex, Image, useColorModeValue, Center, Text } from '@chakra-ui/react'
 import Technology from '@/components/technology'
 import Sea from '../components/landspace/sea'
-/* import Bio from '../components/bio'
- */
+import Bio from '../components/bio'
+
 export default function Home() {
   return (
-    <Box mt={40}>
+    <Box mt={20}>
       <Box mb={20}>
         <Sea />
       </Box>
@@ -46,7 +46,9 @@ export default function Home() {
       <Box mt={5}>
         <Technology />
       </Box>
-      <Box mt={5}>{/* <Bio /> */}</Box>
+      <Box mt={5}>
+        <Bio />
+      </Box>
     </Box>
   )
 }

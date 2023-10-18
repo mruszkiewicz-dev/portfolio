@@ -48,7 +48,7 @@ const BurgerMenu = () => (
     <MenuButton>
       <IconMenu2 />
     </MenuButton>
-    <MenuList>
+    <MenuList zIndex="99999">
       <MyMenuList type="mobile" />
     </MenuList>
   </Menu>
@@ -62,15 +62,14 @@ const Navbar = ({ path }) => {
       bgColor={useColorModeValue('sunset.800', 'yinmn_blue.200')}
       as="nav"
       w="100%"
-      overflow="hidden"
-      zIndex="99999"
+      zIndex="999"
       backdropFilter="auto"
-      backdropBlur="6px"
+      backdropBlur="2px"
     >
       <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="center">
         <Grid p={2} templateColumns="repeat(5, 0.5fr)" gap={1}>
           <GridItem pt={1}>
-            <Logo size="md" />
+            <Logo size="sx" />
           </GridItem>
           <GridItem colSpan={{ base: '0', md: '3' }} p={1}>
             <Box display={{ base: 'none', md: 'flex' }}>
@@ -81,6 +80,7 @@ const Navbar = ({ path }) => {
           </GridItem>
           <GridItem>
             <Button
+              m={1}
               _hover={{ color: useColorModeValue('sunset.900', 'moonstone.100') }}
               color={useColorModeValue('sunset.100', 'moonstone.900')}
               bg={useColorModeValue('sunset.500', 'moonstone.500')}
@@ -90,7 +90,9 @@ const Navbar = ({ path }) => {
             </Button>
           </GridItem>
           <GridItem>
-            <Box
+            <Center
+              m={1}
+              w="48px"
               rounded="md"
               p={2}
               display={{ base: 'flex', md: 'none' }}
@@ -99,7 +101,7 @@ const Navbar = ({ path }) => {
               bg={useColorModeValue('sunset.500', 'moonstone.500')}
             >
               <BurgerMenu />
-            </Box>
+            </Center>
           </GridItem>
         </Grid>
       </Container>
